@@ -59,19 +59,20 @@ They are all located in `src/config`.
 
 To train NDQ on SC2 tasks, run the following command:
 ```shell
---config=categorical_qmix
---env-config=sc2
-with
-env_args.map_name=bane_vs_hM
-env_args.sight_range=2
-env_args.shoot_range=2
-env_args.obs_all_health=False
-env_args.obs_enemy_health=False
-comm_embed_dim=3
-c_beta=0.1
-comm_beta=0.0001
-comm_entropy_beta=0.0
-batch_size_run=16
+python3 src/main.py \
+--config=categorical_qmix \
+--env-config=sc2 \
+with \
+env_args.map_name=bane_vs_hM \
+env_args.sight_range=2 \
+env_args.shoot_range=2 \
+env_args.obs_all_health=False \
+env_args.obs_enemy_health=False \
+comm_embed_dim=3 \
+c_beta=0.1 \
+comm_beta=0.0001 \
+comm_entropy_beta=0.0 \
+batch_size_run=16 \
 runner="parallel_x"
 ```
 
