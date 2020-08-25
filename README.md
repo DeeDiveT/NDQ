@@ -31,23 +31,23 @@ The requirements.txt file can be used to install the necessary packages into a v
 The following command train NDQ on the didactic task `hallway`.
 
 ```shell
-python3 src/main.py 
---config=categorical_qmix
---env-config=join1
-with
-env_args.n_agents=2
-env_args.state_numbers=[6,6]
-obs_last_action=False
-comm_embed_dim=3
-c_beta=0.1
-comm_beta=1e-2
-comm_entropy_beta=0.
-batch_size_run=16
-t_max=2e7
-local_results_path=$DATA_PATH
-is_cur_mu=True
-is_rank_cut_mu=True
-runner="parallel_x"
+python3 src/main.py \
+--config=categorical_qmix \
+--env-config=join1 \
+with \
+env_args.n_agents=2 \
+env_args.state_numbers=[6,6] \
+obs_last_action=False \
+comm_embed_dim=3 \
+c_beta=0.1 \
+comm_beta=1e-2 \
+comm_entropy_beta=0. \
+batch_size_run=16 \
+t_max=2e7 \
+local_results_path=$DATA_PATH \
+is_cur_mu=True \
+is_rank_cut_mu=True \
+runner="parallel_x" \
 test_interval=100000
 ```
 
